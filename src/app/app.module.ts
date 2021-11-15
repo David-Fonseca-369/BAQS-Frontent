@@ -15,13 +15,21 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 ///
 
 import { MenuComponent } from './menu/menu.component';
 import { ListaUsuariosComponent } from './usuarios/lista-usuarios/lista-usuarios.component';
+import { FormularioUsuarioComponent } from './usuarios/formulario-usuario/formulario-usuario.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, ListaUsuariosComponent],
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    ListaUsuariosComponent,
+    FormularioUsuarioComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,6 +41,8 @@ import { ListaUsuariosComponent } from './usuarios/lista-usuarios/lista-usuarios
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -11,7 +11,15 @@ export class ListaUsuariosComponent implements OnInit {
   constructor(private usuariosService: UsuariosService) {}
   usuarios: usuarioDTO[];
 
-  columnasAMostrar = ['idUsuario', 'nombre', 'email', 'opciones'];
+  columnasAMostrar = [
+    'idUsuario',
+    'nombre',
+    'email',
+    'rol',
+    'compania',
+    'estado',
+    'opciones',
+  ];
 
   ngOnInit(): void {
     //carga las cosas cuando se inicia

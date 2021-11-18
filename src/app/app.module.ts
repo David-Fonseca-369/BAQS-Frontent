@@ -17,18 +17,21 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 ///
 
 import { MenuComponent } from './menu/menu.component';
 import { ListaUsuariosComponent } from './usuarios/lista-usuarios/lista-usuarios.component';
-import { FormularioUsuarioComponent } from './usuarios/formulario-usuario/formulario-usuario.component';
+import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ListaUsuariosComponent,
-    FormularioUsuarioComponent,
+    CrearUsuarioComponent,
+    EditarUsuarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { FormularioUsuarioComponent } from './usuarios/formulario-usuario/formul
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

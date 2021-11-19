@@ -64,7 +64,10 @@ export class CrearUsuarioComponent implements OnInit {
         alert('¡Usuario Agregado!');
         this.router.navigate(['/usuarios']);
       },
-      (error) => console.log(error)
+      (error) => {
+        alert(error.error);
+        console.log(error.error);
+      }
     );
   }
 }

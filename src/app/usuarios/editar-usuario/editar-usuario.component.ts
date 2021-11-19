@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CompaniasService } from 'src/app/companias/companias.service';
 import { RolesService } from 'src/app/roles/roles.service';
-import { usuarioDTO } from '../usuario';
+import { usuarioActualizarDTO, usuarioDTO } from '../usuario';
 import { UsuariosService } from '../usuarios.service';
 
 @Component({
@@ -14,6 +14,7 @@ import { UsuariosService } from '../usuarios.service';
 export class EditarUsuarioComponent implements OnInit {
   roles: import('d:/Espacio_de_trabajo/BAQS-Frontend/BAQS-Frontend/src/app/roles/rol').rolDTO[];
   companias: import('d:/Espacio_de_trabajo/BAQS-Frontend/BAQS-Frontend/src/app/companias/compania').companiaDTO[];
+  checked = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,7 +34,8 @@ export class EditarUsuarioComponent implements OnInit {
       idCompania: ['', { validators: [Validators.required] }],
       nombre: ['', { validators: [Validators.required] }],
       email: ['', { validators: [Validators.required, Validators.email] }],
-      _Password: ['', { validators: [Validators.required] }],
+      _Password: ['', { validators: [Validators.minLength(8)] }],
+      cambioPassword: '',
     });
 
     this.getRoles();
@@ -73,5 +75,24 @@ export class EditarUsuarioComponent implements OnInit {
     );
   }
 
-  editarUsuario() {}
+  editarUsuario() {
+    const usuario: usuarioActualizarDTO = {
+      idRol: this.form.value.idRol,
+      idCompania: this.form.value.idCompania,
+      nombre: this.form.value.nombre,
+      email: this.form.value.email,
+      _Password: this.form.value._Password,
+    };
+
+    this.usuariosService.modificar(this.modelo.idUsuario, usuario).subscribe(
+      () => {
+        alert('¡Usuario actualizado!');
+        this.router.navigate(['/usuarios']);
+      },
+      (error) => {
+        alert(error.error);
+        console.log(error.error);
+      }
+    );
+  }
 }

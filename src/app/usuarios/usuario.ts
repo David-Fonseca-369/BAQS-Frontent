@@ -17,3 +17,11 @@ export interface usuarioCreacionDTO {
   _Password: string;
   estado: boolean;
 }
+
+export interface usuarioActualizarDTO {
+  idRol: number;
+  idCompania: number;
+  nombre: string;
+  email: string;
+  _Password: string;
+}

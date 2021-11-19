@@ -34,4 +34,24 @@ export class ListaUsuariosComponent implements OnInit {
       (error) => console.log('Error ' + error)
     );
   }
+
+  activar(id: number) {
+    this.usuariosService.activar(id).subscribe(
+      () => {
+        alert('¡Usuario Activado!');
+        this.cargarUsuarios();
+      },
+      (error) => alert(error.error)
+    );
+  }
+
+  desactivar(id: number) {
+    this.usuariosService.desactivar(id).subscribe(
+      () => {
+        alert('¡Usuario Desactivado!');
+        this.cargarUsuarios();
+      },
+      (error) => alert(error.error)
+    );
+  }
 }

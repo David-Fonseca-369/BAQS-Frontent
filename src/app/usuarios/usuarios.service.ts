@@ -2,7 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { usuarioCreacionDTO, usuarioDTO } from './usuario';
+import {
+  usuarioActualizarDTO,
+  usuarioCreacionDTO,
+  usuarioDTO,
+} from './usuario';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +21,6 @@ export class UsuariosService {
   }
 
   public obtenerPorId(id: number): Observable<usuarioDTO> {
-    console.log(`${this.apiURL}/${id}`);
     return this.http.get<usuarioDTO>(`${this.apiURL}/${id}`);
   }
 
@@ -25,7 +28,7 @@ export class UsuariosService {
     return this.http.post(`${this.apiURL}/insertar`, usuario);
   }
 
-  public modificar(id: number, usuario: usuarioCreacionDTO) {
+  public modificar(id: number, usuario: usuarioActualizarDTO) {
     return this.http.put(`${this.apiURL}/modificar/${id}`, usuario);
   }
 

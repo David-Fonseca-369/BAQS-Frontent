@@ -20,12 +20,19 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
+
+import { MatMenuModule } from '@angular/material/menu';
 ///
 
 import { MenuComponent } from './menu/menu.component';
 import { ListaUsuariosComponent } from './usuarios/lista-usuarios/lista-usuarios.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
+import { BaqsComponent } from './baqs/baqs.component';
+import { ProgramacionComponent } from './programacion/programacion.component';
+import { LoginComponent } from './login/login/login.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AutorizadoComponent } from './login/autorizado/autorizado.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +41,11 @@ import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario
     ListaUsuariosComponent,
     CrearUsuarioComponent,
     EditarUsuarioComponent,
+    BaqsComponent,
+    ProgramacionComponent,
+    LoginComponent,
+    LandingPageComponent,
+    AutorizadoComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +62,7 @@ import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario
     MatSelectModule,
     MatInputModule,
     MatCheckboxModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

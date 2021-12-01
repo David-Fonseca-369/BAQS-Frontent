@@ -1,0 +1,36 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div class="login-container">
+      <h1>Login</h1>
+      <mat-form-field appearance="outline">
+        <mat-label>User</mat-label>
+        <input matInput formControlName="user" />
+        <mat-error>Debe ingresar un usuario.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error>Debe agregar un password.</mat-error>
+      </mat-form-field>
+
+      <div class="button-login">
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="login()"
+          [disabled]="form.invalid"
+        >
+          Iniciar Sesión
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

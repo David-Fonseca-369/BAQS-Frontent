@@ -1,3 +1,40 @@
 <mat-toolbar color="primary">
-  <a mat-button routerLink="usuarios">Usuarios</a>
+  <app-autorizado>
+    <ng-container autorizado>
+      <a mat-button routerLink="landingPage">
+        <mat-icon>home</mat-icon>
+        <b>BAQS</b>
+      </a>
+
+      <a mat-button routerLink="baqs">BAQS</a>
+
+      <a mat-button routerLink="programacion">Programación</a>
+    </ng-container>
+  </app-autorizado>
+
+  <app-autorizado [rol]="'Administrador'">
+    <ng-container autorizado>
+      <a mat-button routerLink="usuarios">Usuarios</a>
+    </ng-container>
+  </app-autorizado>
+
+  <div class="space"></div>
+
+  <app-autorizado>
+    <ng-container noAutorizado>
+      <a mat-button routerLink="login">Iniciar Sesión</a>
+    </ng-container>
+
+    <ng-container autorizado>
+      <a mat-button [matMenuTriggerFor]="opciones">{{
+        seguridadService.obtenerCampoJWT("email")
+      }}</a>
+
+      <mat-menu #opciones="matMenu">
+        <button mat-menu-item (click)="seguridadService.logout()">
+          Cerrar Sesión
+        </button>
+      </mat-menu>
+    </ng-container>
+  </app-autorizado>
 </mat-toolbar>

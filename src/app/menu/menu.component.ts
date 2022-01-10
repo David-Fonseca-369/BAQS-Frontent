@@ -10,4 +10,14 @@ export class MenuComponent implements OnInit {
   constructor(public seguridadService: SeguridadService) {}
 
   ngOnInit(): void {}
+
+  username(): string {
+    let userRelease = this.seguridadService
+      .obtenerCampoJWT('nombre')
+      .split('.');
+    let name = userRelease[0].toUpperCase();
+    let surname = userRelease[1].toUpperCase();
+
+    return name + ' ' + surname;
+  }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BaqsCrearComponent } from './baqs-crear/baqs-crear.component';
 import { BaqsComponent } from './baqs/baqs.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login/login.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'usuarios/editar/:id', component: EditarUsuarioComponent },
 
   { path: 'baqs', component: BaqsComponent },
+  { path: 'baqs/crear', component: BaqsCrearComponent },
   { path: 'programacion', component: ProgramacionComponent },
 
   { path: '**', redirectTo: 'login' },

@@ -22,6 +22,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 ///
 
 import { MenuComponent } from './menu/menu.component';
@@ -33,6 +35,9 @@ import { ProgramacionComponent } from './programacion/programacion.component';
 import { LoginComponent } from './login/login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AutorizadoComponent } from './login/autorizado/autorizado.component';
+import { BaqsCrearComponent } from './baqs-crear/baqs-crear.component';
+import { MostrarErroresComponent } from './helpers/mostrar-errores/mostrar-errores.component';
+import { SpinnerComponent } from './helpers/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +51,9 @@ import { AutorizadoComponent } from './login/autorizado/autorizado.component';
     LoginComponent,
     LandingPageComponent,
     AutorizadoComponent,
+    BaqsCrearComponent,
+    MostrarErroresComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +71,8 @@ import { AutorizadoComponent } from './login/autorizado/autorizado.component';
     MatInputModule,
     MatCheckboxModule,
     MatMenuModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
